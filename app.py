@@ -1,5 +1,8 @@
 import streamlit as st
 import joblib 
+import warnings 
+
+warnings.filterwarnings('ignore')
 
 st.set_page_config(page_icon=':car:',page_title='CO2 Emissions')
 
