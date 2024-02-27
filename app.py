@@ -1,8 +1,5 @@
 import streamlit as st
 import joblib 
-import warnings 
-
-warnings.filterwarnings('ignore')
 
 st.set_page_config(page_icon=':car:',page_title='CO2 Emissions')
 
@@ -27,18 +24,25 @@ submit_button = st.button('Predict')
 if submit_button:
     if engine and not cylinders and not fuel:
         st.error('Please fill all requirements')
+        prediction = 0
     if engine and not cylinders and fuel:
         st.error('Please fill all requirements')
+        prediction = 0
     if engine and cylinders and not fuel:
         st.error('Please fill all requirements')
+        prediction = 0
     if not engine and not cylinders and not fuel:
         st.error('Please fill all requirements')
+        prediction = 0
     if not engine and not cylinders and fuel:
         st.error('Please fill all requirements')
+        prediction = 0
     if not engine and cylinders and not fuel:
         st.error('Please fill all requirements')
+        prediction = 0
     if not engine and cylinders and fuel:
         st.error('Please fill all requirements')
+        prediction = 0
     if engine and cylinders and fuel:
         prediction = model.predict([[engine,cylinders,fuel]])
         st.write(f"{int(prediction)} g/km")
