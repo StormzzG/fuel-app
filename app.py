@@ -1,11 +1,11 @@
 import streamlit as st
 import joblib 
 
-st.set_page_config(page_icon=':car:',page_title='CO2 Emissions')
+st.set_page_config(page_icon=':car:',page_title='CO2 Emissions Prediction')
 
 st.title(':car: Car CO2 Emissions Predictor')
 
-st.image('05(1).jpg')
+st.image('porsche.jpg')
 
 st.markdown('This web app is built on a Supervised Multiple Linear Regression Machine Learning Algorithm for predicting the CO2 emissions of cars based on engine size, number of cylinders and fuel consumption. Fill in the fields below to have a look!')
 st.markdown('-----------------------------------')
