@@ -10,7 +10,7 @@ st.image('porsche.jpg')
 st.markdown('This web app is built on a Supervised Multiple Linear Regression Machine Learning Algorithm for predicting the CO2 emissions of cars based on engine size, number of cylinders and fuel consumption. Fill in the fields below to have a look!')
 st.markdown('-----------------------------------')
 
-with open('Fuel-Predictor.joblib','rb') as f:
+with open('fuel-predictor2.joblib','rb') as f:
     model = joblib.load(f)
 
 col1,col2 = st.columns((2))
