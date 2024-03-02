@@ -18,7 +18,7 @@ with col1:
     engine = float(st.number_input('Engine Size'))
 with col2:
     cylinders = int(st.number_input('Number of Cylinders'))
-fuel = float(st.number_input('Fuel Consumption(L/100Km)'))
+fuel = float(st.number_input('Fuel Consumption Combined(L/100Km)'))
 
 submit_button = st.button('Predict')
 if submit_button:
