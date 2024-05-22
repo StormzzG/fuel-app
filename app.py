@@ -1,5 +1,6 @@
 import streamlit as st
 import joblib 
+import pandas as pd
 
 st.set_page_config(page_icon=':car:',page_title='CO2 Emissions Prediction')
 
@@ -7,7 +8,7 @@ st.title(':car: Car CO2 Emissions Predictor')
 
 st.image('porsche.jpg')
 
-st.markdown('This web app is built on a Supervised Random Forest Regression, Machine Learning Algorithm for predicting the CO2 emissions of cars based on engine size, number of cylinders and fuel consumption. Fill in the fields below to have a look!')
+st.markdown('This web app is built on a Supervised Random Forest Regression, Machine Learning Algorithm for predicting the CO2 emissions of cars based on engine size, number of cylinders and fuel consumption. Fill in the fields below to have a look! [Here](https://github.com/StormzzG/machine-learning) is a link to a python notebook that shows how the model was trained.')
 st.markdown('-----------------------------------')
 
 with open('fuel-predictor2.joblib','rb') as f:
@@ -53,3 +54,7 @@ if submit_button:
         st.write('Average Fuel Economy')
     elif prediction > 255:
         st.write('High Fuel Economy')
+
+st.subheader('Sample Data used for Training and Testing')
+df = pd.read_csv('Fuel_data.csv')
+st.dataframe(df.head().style.background_gradient(cmap='Oranges'))
